@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テトリス（Tetris）完全攻略ガイド</title>
+    <style>
+        :root {
+            --primary-color: #00d2ff;
+            --accent-color: #ff007f;
+            --bg-color: #0a0e17;
+            --card-bg: #161f30;
+            --text-color: #e2e8f0;
+            --highlight-bg: rgba(255, 0, 127, 0.15);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        section h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: #1f2a44;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #2d3748;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            background-color: #111;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 2px solid #333;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background-color: var(--highlight-bg);
+            color: var(--accent-color);
+            font-weight: bold;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #718096;
+            border-top: 1px solid #2d3748;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TETRIS 完全攻略ガイド</h1>
+        <p>初心者から上級者を目指すための基礎知識とテクニック</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>1. テトリスとは？</h2>
+            <p>テトリスは、1984年に落ち物パズルゲームとして誕生し、世界中で愛され続けている超名作ゲームです。上から落ちてくる<strong>「テトリミノ」</strong>と呼ばれるブロックを操作し、横一列を隙間なく並べて消していくのが目的です。</p>
+        </section>
+
+        <section>
+            <h2>2. 基本ルール</h2>
+            <p>ゲームのルールは非常にシンプルですが、奥が深いです。</p>
+            <ol>
+                <li><strong>ブロックの配置：</strong> 7種類の異なる形状のブロック（テトリミノ）がランダムに落ちてきます。</li>
+                <li><strong>ライン消去：</strong> 横一列（10マス）が隙間なくブロックで埋まると、そのラインが消滅します。</li>
+                <li><strong>ゲームオーバー：</strong> ブロックが画面の一番上まで積み上がってしまうとゲーム終了です。</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>3. スコアを伸ばす重要テクニック</h2>
+            <p>ただ一列ずつ消すだけでなく、特定の消し方をすることで高得点（または対戦相手への強い攻撃）を狙えます。</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <img src="tetris.png" alt="テトリス4列消しの図解" class="tech-image">
+                    <h3>テトリス/4列消し</h3>
+                    <p>縦長の「Iミノ」をギリギリまで温存し、<span class="highlight">一度に4ラインを同時に消す</span>大技です。最も基本的かつ強力な得点源です。</p>
+                </div>
+
+                <div class="card">
+                    <img src="tspin.png" alt="Tスピンの図解" class="tech-image">
+                    <h3>T-Spin/Tスピン</h3>
+                    <p>「Tミノ」を狭い隙間に滑り込ませ、<span class="highlight">回転させてハメ込む</span>テクニックです。高度ですが、通常の消し方より非常に高いスコアが得られます。</p>
+                </div>
+
+                <div class="card">
+                    <img src="4ren.png" alt="REN/コンボの図解" class="tech-image">
+                    <h3>REN/コンボ</h3>
+                    <p>ブロックを連続で消し続けることです。連続回数（Combo数）が増えるほど、ボーナススコアが跳ね上がります。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 上達へのアドバイス</h2>
+            <p>まずは「平らに積むこと」を意識しましょう。高く積み上がってしまっても焦らず、隙間を埋めるようにブロックを素早く判断して配置していくのが上達への第一歩です！</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 テトリス解説サイト By VoxelLab</p>
+    </footer>
+
+</body>
+</html>
